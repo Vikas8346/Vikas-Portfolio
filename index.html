@@ -820,7 +820,7 @@
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="games">
-              <a href="vikas8346.github.io/tik-tac-toe/">
+              <a href="https://vikas8346.github.io/tik-tac-toe/">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -892,7 +892,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="games">
-              <a href="vikas8346.github.io/rock-paper-scissor/">
+              <a href="https://vikas8346.github.io/rock-paper-scissor/">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -928,7 +928,7 @@
             </li> -->
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="krypto-etox.github.io/udemi/">
+              <a href="https://krypto-etox.github.io/udemi/">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -946,7 +946,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="krypto-etox.github.io/to-do-app/">
+              <a href="https://krypto-etox.github.io/to-do-app/">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -1031,6 +1031,32 @@
           </form>
 
         </section>
+        <script>
+  document.querySelector('form[data-form]').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(this);
+    
+    fetch(this.action, {
+      method: 'POST',
+      body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert('Message sent successfully!');
+        this.reset(); // Reset the form
+      } else {
+        alert('Failed to send message. Please try again.');
+      }
+    })
+    .catch(error => {
+      alert('An error occurred. Please try again later.');
+      console.error('Error:', error);
+    });
+  });
+</script>
+
 
       </article>
 
