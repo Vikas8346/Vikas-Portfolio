@@ -1093,25 +1093,24 @@ document.querySelector('form[data-form]').addEventListener('submit', function(ev
       modalMessage.textContent = 'Failed to send message. Please try again.';
     }
     modal.style.display = 'block'; // Show the modal
+
+    // Automatically close the modal after 2 seconds
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 2000);
   })
   .catch(error => {
     modalMessage.textContent = 'An error occurred. Please try again later.';
     modal.style.display = 'block'; // Show the modal
+
+    // Automatically close the modal after 2 seconds
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 2000);
+    
     console.error('Error:', error);
   });
 });
-
-// Close the modal when the user clicks on <span> (x)
-closeModal.onclick = function() {
-  modal.style.display = 'none';
-}
-
-// Close the modal when the user clicks anywhere outside of the modal
-window.onclick = function(event) {
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
-}
 
 </script>
       
